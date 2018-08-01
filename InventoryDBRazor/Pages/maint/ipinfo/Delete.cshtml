@@ -1,0 +1,70 @@
+﻿@page
+@model InventoryDBRazor.Pages.maint.ipinfo.DeleteModel
+
+@{
+    ViewData["Title"] = "Delete";
+    Layout = "~/Pages/Shared/_Layout.cshtml";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>IPInfo</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.IPInfo.IPAddress)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.IPInfo.IPAddress)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.IPInfo.hostname)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.IPInfo.hostname)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.IPInfo.netmask)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.IPInfo.netmask)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.IPInfo.gateway)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.IPInfo.gateway)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.IPInfo.DNS1)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.IPInfo.DNS1)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.IPInfo.DNS2)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.IPInfo.DNS2)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.IPInfo.DNS3)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.IPInfo.DNS3)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.IPInfo.DNSZone)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.IPInfo.DNSZone)
+        </dd>
+    </dl>
+    
+    <form method="post">
+        <input type="hidden" asp-for="IPInfo.IPID" />
+        <input type="submit" value="Delete" class="btn btn-default" /> | <a asp-page="/maint/ItemDetailEdit" asp-route-id="@Model.IPInfo.itemID">Back to List</a>
+    </form>
+</div>

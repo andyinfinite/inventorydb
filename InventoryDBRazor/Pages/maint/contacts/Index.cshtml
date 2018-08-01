@@ -1,0 +1,49 @@
+﻿@page
+@model InventoryDBRazor.Pages.maint.contacts.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Pages/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.ListContact[0].Poc1_Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ListContact[0].Poc1_Email)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ListContact[0].Poc1_Phone)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.ListContact) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Poc1_Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Poc1_Email)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Poc1_Phone)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.ContactId">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.ContactId">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.ContactId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

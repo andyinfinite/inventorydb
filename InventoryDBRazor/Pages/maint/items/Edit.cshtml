@@ -1,0 +1,231 @@
+﻿@page
+@model InventoryDBRazor.Pages.maint.items.EditModel
+
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Pages/Shared/_Layout.cshtml";
+}
+
+<h2>Edit</h2>
+
+<h4>TblMain</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="TblMain.ItemName" class="control-label"></label>
+                <input asp-for="TblMain.ItemName" class="form-control" />
+                <span asp-validation-for="TblMain.ItemName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TblMain.ItemDescription" class="control-label"></label>
+                <input asp-for="TblMain.ItemDescription" class="form-control" />
+                <span asp-validation-for="TblMain.ItemDescription" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TblMain.ItemOwnership" class="control-label"></label>
+                <input asp-for="TblMain.ItemOwnership" class="form-control" />
+                <span asp-validation-for="TblMain.ItemOwnership" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TblMain.AdditionalInfo" class="control-label"></label>
+                <input asp-for="TblMain.AdditionalInfo" class="form-control" />
+                <span asp-validation-for="TblMain.AdditionalInfo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TblMain.Vendor" class="control-label"></label>
+                <input asp-for="TblMain.Vendor" class="form-control" />
+                <span asp-validation-for="TblMain.Vendor" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TblMain.ModelNumber" class="control-label"></label>
+                <input asp-for="TblMain.ModelNumber" class="form-control" />
+                <span asp-validation-for="TblMain.ModelNumber" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TblMain.FirmwareVersion" class="control-label"></label>
+                <input asp-for="TblMain.FirmwareVersion" class="form-control" />
+                <span asp-validation-for="TblMain.FirmwareVersion" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TblMain.SoftwareVersion" class="control-label"></label>
+                <input asp-for="TblMain.SoftwareVersion" class="form-control" />
+                <span asp-validation-for="TblMain.SoftwareVersion" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TblMain.SerialNumber" class="control-label"></label>
+                <input asp-for="TblMain.SerialNumber" class="form-control" />
+                <span asp-validation-for="TblMain.SerialNumber" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TblMain.SerialNumber2" class="control-label"></label>
+                <input asp-for="TblMain.SerialNumber2" class="form-control" />
+                <span asp-validation-for="TblMain.SerialNumber2" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TblMain.StateAssetTag" class="control-label"></label>
+                <input asp-for="TblMain.StateAssetTag" class="form-control" />
+                <span asp-validation-for="TblMain.StateAssetTag" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TblMain.ProductKey" class="control-label"></label>
+                <input asp-for="TblMain.ProductKey" class="form-control" />
+                <span asp-validation-for="TblMain.ProductKey" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TblMain.Eoldate" class="control-label"></label>
+                <input asp-for="TblMain.Eoldate" class="form-control" />
+                <span asp-validation-for="TblMain.Eoldate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TblMain.Eosdate" class="control-label"></label>
+                <input asp-for="TblMain.Eosdate" class="form-control" />
+                <span asp-validation-for="TblMain.Eosdate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TblMain.Manufacturer" class="control-label"></label>
+                <input asp-for="TblMain.Manufacturer" class="form-control" />
+                <span asp-validation-for="TblMain.Manufacturer" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TblMain.GeoLocation" class="control-label"></label>
+                <select asp-for="TblMain.GeoLocation" class="form-control" asp-items="ViewBag.GeoLocation"></select>
+                <span asp-validation-for="TblMain.GeoLocation" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TblMain.InstalledLocation" class="control-label"></label>
+                <input asp-for="TblMain.InstalledLocation" class="form-control" />
+                <span asp-validation-for="TblMain.InstalledLocation" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TblMain.InstalledLocation2" class="control-label"></label>
+                <input asp-for="TblMain.InstalledLocation2" class="form-control" />
+                <span asp-validation-for="TblMain.InstalledLocation2" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TblMain.StorageLocation" class="control-label"></label>
+                <input asp-for="TblMain.StorageLocation" class="form-control" />
+                <span asp-validation-for="TblMain.StorageLocation" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TblMain.ItemType" class="control-label"></label>
+                <select asp-for="TblMain.ItemType" class="form-control" asp-items="ViewBag.ItemType"></select>
+                <span asp-validation-for="TblMain.ItemType" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TblMain.ToolName" class="control-label"></label>
+                <select asp-for="TblMain.ToolName" class="form-control" asp-items="ViewBag.ToolName"></select>
+                <span asp-validation-for="TblMain.ToolName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TblMain.Vm_Ram" class="control-label"></label>
+                <input asp-for="TblMain.Vm_Ram" class="form-control" />
+                <span asp-validation-for="TblMain.Vm_Ram" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TblMain.Vm_Cpu" class="control-label"></label>
+                <input asp-for="TblMain.Vm_Cpu" class="form-control" />
+                <span asp-validation-for="TblMain.Vm_Cpu" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TblMain.Vm_Os" class="control-label"></label>
+                <input asp-for="TblMain.Vm_Os" class="form-control" />
+                <span asp-validation-for="TblMain.Vm_Os" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TblMain.LicenseStatus" class="control-label"></label>
+                <input asp-for="TblMain.LicenseStatus" class="form-control" />
+                <span asp-validation-for="TblMain.LicenseStatus" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TblMain.LicenseMethod" class="control-label"></label>
+                <input asp-for="TblMain.LicenseMethod" class="form-control" />
+                <span asp-validation-for="TblMain.LicenseMethod" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TblMain.LicenseQuantity" class="control-label"></label>
+                <input asp-for="TblMain.LicenseQuantity" class="form-control" />
+                <span asp-validation-for="TblMain.LicenseQuantity" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TblMain.LicenseExpiration" class="control-label"></label>
+                <input asp-for="TblMain.LicenseExpiration" class="form-control" />
+                <span asp-validation-for="TblMain.LicenseExpiration" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TblMain.LicenseFrequency" class="control-label"></label>
+                <input asp-for="TblMain.LicenseFrequency" class="form-control" />
+                <span asp-validation-for="TblMain.LicenseFrequency" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TblMain.LicensePartNumber" class="control-label"></label>
+                <input asp-for="TblMain.LicensePartNumber" class="form-control" />
+                <span asp-validation-for="TblMain.LicensePartNumber" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TblMain.VendorOrderRefNum" class="control-label"></label>
+                <input asp-for="TblMain.VendorOrderRefNum" class="form-control" />
+                <span asp-validation-for="TblMain.VendorOrderRefNum" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TblMain.VendorCustomerNum" class="control-label"></label>
+                <input asp-for="TblMain.VendorCustomerNum" class="form-control" />
+                <span asp-validation-for="TblMain.VendorCustomerNum" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TblMain.VendorSiteNum" class="control-label"></label>
+                <input asp-for="TblMain.VendorSiteNum" class="form-control" />
+                <span asp-validation-for="TblMain.VendorSiteNum" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TblMain.OrderDate" class="control-label"></label>
+                <input asp-for="TblMain.OrderDate" class="form-control" />
+                <span asp-validation-for="TblMain.OrderDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TblMain.InternalBillingCode" class="control-label"></label>
+                <input asp-for="TblMain.InternalBillingCode" class="form-control" />
+                <span asp-validation-for="TblMain.InternalBillingCode" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TblMain.OispinvoiceNum" class="control-label"></label>
+                <input asp-for="TblMain.OispinvoiceNum" class="form-control" />
+                <span asp-validation-for="TblMain.OispinvoiceNum" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TblMain.PurchaseCost" class="control-label"></label>
+                <input asp-for="TblMain.PurchaseCost" class="form-control" />
+                <span asp-validation-for="TblMain.PurchaseCost" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TblMain.AnnualCost" class="control-label"></label>
+                <input asp-for="TblMain.AnnualCost" class="form-control" />
+                <span asp-validation-for="TblMain.AnnualCost" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TblMain.MonthlyCost" class="control-label"></label>
+                <input asp-for="TblMain.MonthlyCost" class="form-control" />
+                <span asp-validation-for="TblMain.MonthlyCost" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TblMain.ItemStatus" class="control-label"></label>
+                <select asp-for="TblMain.ItemStatus" class="form-control" asp-items="ViewBag.StatusID"></select>
+                <span asp-validation-for="TblMain.ItemStatus" class="text-danger"></span>
+            </div>
+            <input type="hidden" asp-for="TblMain.ItemId" />
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-default" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="./Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

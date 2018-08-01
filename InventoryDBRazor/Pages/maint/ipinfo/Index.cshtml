@@ -1,0 +1,79 @@
+﻿@page
+@model InventoryDBRazor.Pages.maint.ipinfo.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Pages/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.IPInfo[0].IPAddress)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IPInfo[0].hostname)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IPInfo[0].netmask)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IPInfo[0].gateway)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IPInfo[0].DNS1)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IPInfo[0].DNS2)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IPInfo[0].DNS3)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IPInfo[0].DNSZone)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.IPInfo) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.IPAddress)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.hostname)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.netmask)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.gateway)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DNS1)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DNS2)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DNS3)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DNSZone)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.IPID">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.IPID">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.IPID">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

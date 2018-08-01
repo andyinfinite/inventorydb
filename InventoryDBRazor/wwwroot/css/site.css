@@ -35,3 +35,23 @@ body {
         display: none;
     }
 }
+
+/* Create two equal columns that floats next to each other */
+.column {
+    flex: 50%;
+    padding: 10px;
+    width: 50%;
+}
+
+/* Clear floats after the columns */
+.row {
+    display: inline-flex;
+    width: 100%;
+    clear: both;
+}
+
+h2 {
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: darkblue;
+    font-size:larger;
+}

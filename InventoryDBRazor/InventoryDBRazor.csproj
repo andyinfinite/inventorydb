@@ -2,10 +2,79 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp2.1</TargetFramework>
+    <StartupObject></StartupObject>
+    <ApplicationIcon />
+    <OutputType>Exe</OutputType>
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Pages\maint\contacts\**" />
+    <Compile Remove="Pages\maint\vendor\**" />
+    <Content Remove="Pages\maint\contacts\**" />
+    <Content Remove="Pages\maint\vendor\**" />
+    <EmbeddedResource Remove="Pages\maint\contacts\**" />
+    <EmbeddedResource Remove="Pages\maint\vendor\**" />
+    <None Remove="Pages\maint\contacts\**" />
+    <None Remove="Pages\maint\vendor\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove="Data\InventoryDBContactContext.cs" />
+    <Compile Remove="Data\InventoryDBContext_old.cs" />
+    <Compile Remove="Data\InventoryDBItemsContext.cs" />
+    <Compile Remove="Data\InventoryDBLocationContext.cs" />
+    <Compile Remove="Data\InventoryDBToolsContext.cs" />
+    <Compile Remove="Data\InventoryDBToolTypeContext.cs" />
+    <Compile Remove="Models\IntMainContact.cs" />
+    <Compile Remove="Models\InventoryDBContext.cs" />
+    <Compile Remove="Models\ListContact.cs" />
+    <Compile Remove="Models\ListVendor.cs" />
+    <Compile Remove="Models\ListVendorPOC.cs" />
+    <Compile Remove="Pages\Index_old.cshtml.cs" />
+    <Compile Remove="Pages\maint\ItemDetailIPInfoEdit.cshtml.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="Pages\Index_old.cshtml" />
+    <Content Remove="Pages\maint\ItemDetailIPInfoEdit.cshtml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Boilerplate.AspNetCore.Razor" Version="2.1.1" />
     <PackageReference Include="Microsoft.AspNetCore.App" />
+    <PackageReference Include="Microsoft.AspNetCore.Razor.Language" Version="2.1.1" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="2.1.1" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="2.1.1" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.1.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Properties\Resources.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Update="Pages\maint\ItemDetailCreate.cshtml">
+      <Pack>$(IncludeRazorContentInPack)</Pack>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <UpToDateCheckInput Remove="Pages\maint\ItemDetailEdit.cshtml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <_ContentIncludedByDefault Remove="Pages\maint\ItemDetailEdit.cshtml" />
   </ItemGroup>
 
 </Project>

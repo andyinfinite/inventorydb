@@ -1,0 +1,189 @@
+﻿@page
+@model ItemDetailEdit
+@{var username = User.Identity.Name;}
+
+
+@{
+    ViewData["Title"] = "Item Detail";
+    Layout = "~/Pages/Shared/_Layout.cshtml";
+}
+
+<div>
+    <form method="post">
+        <br />
+        <div>
+            <table>
+                <tr>
+                    <td style="font-size:x-large; color:blue"><input asp-for="ItemDetail.ItemName" /> | <input asp-for="ItemDetail.ItemDescription" /></td>
+                </tr>
+                <tr>
+                    <td><b>Tool:</b> <select asp-for="ItemDetail.ToolName" asp-items="ViewBag.ToolName"></select> <b>Type:</b> <select asp-for="ItemDetail.ItemType" asp-items="ViewBag.ToolType"></select></td>
+                </tr>
+                <tr>
+                    <td><b>Status:</b> <select asp-for="ItemDetail.ItemStatus" asp-items="ViewBag.StatusID"></select></td>
+                </tr>
+            </table>
+        </div>
+
+        <div style="border-bottom:1px; border-bottom-style:dashed; border-color: navy;">
+            <div>
+                <div style="font-size:large; font-weight:bold; padding-top: 20px;">Notes:</div>
+                <textarea asp-for="ItemDetail.AdditionalInfo" cols="120" rows="6"></textarea>
+            </div>
+        </div>
+
+
+        <div style="position:relative; top: 0px; padding-top: 35px; border-bottom:1px; border-bottom-style:dashed; border-color: navy;">
+            <div style="font-size:large; font-weight:bold; color: cornflowerblue;">Basic Information</div>
+            <table width="100%" align="top">
+                <tr>
+                    <td valign="top" width="25%"><b>Vendor:</b><br /><input asp-for="ItemDetail.Vendor" /></td>
+                    <td valign="top" width="25%"><b>Model Number:</b><br /><input asp-for="ItemDetail.ModelNumber" /></td>
+                    <td valign="top" width="25%"><b>Serial Number:</b><br /><input asp-for="ItemDetail.SerialNumber" /></td>
+                    <td valign="top" width="25%"><b>Serial Number 2:</b><br /><input asp-for="ItemDetail.SerialNumber2" /></td>
+                </tr>
+                <tr>
+                    <td valign="top"><b>State Asset Tag:</b><br /><input asp-for="ItemDetail.StateAssetTag" /></td>
+                    <td valign="top"><b>Product Key:</b><br /><input asp-for="ItemDetail.ProductKey" /></td>
+                    <td valign="top"><b>Firmware Version:</b><br /><input asp-for="ItemDetail.FirmwareVersion" /></td>
+                    <td valign="top"><b>Software Version:</b><br /><input asp-for="ItemDetail.SoftwareVersion" /></td>
+                </tr>
+                <tr>
+                    <td valign="top"><b>Manufacturer:</b><br /><input asp-for="ItemDetail.Manufacturer" /></td>
+                    <td valign="top"><b>End of Life:</b><br /><input asp-for="ItemDetail.Eoldate" /></td>
+                    <td valign="top"><b>End of Service:</b><br /><input asp-for="ItemDetail.Eosdate" /></td>
+                    <td valign="top"><b>Item Ownership:</b><br /><input asp-for="ItemDetail.ItemOwnership" /></td>
+                </tr>
+            </table>
+        </div>
+
+        <div style="position:relative; clear:both; padding-top: 35px; border-bottom:1px; border-bottom-style:dashed; border-color: navy;">
+            <div style="font-size:large; font-weight:bold; color: cornflowerblue;">Location Information</div>
+            <table width="100%">
+                <tr>
+                    <th width="25%">@Html.DisplayNameFor(model => model.ItemDetail.ListLocation.LocationName)</th>
+                    <th width="25%">@Html.DisplayNameFor(model => model.ItemDetail.InstalledLocation)</th>
+                    <th width="25%">@Html.DisplayNameFor(model => model.ItemDetail.InstalledLocation2)</th>
+                    <th width="25%">@Html.DisplayNameFor(model => model.ItemDetail.StorageLocation)</th>
+                </tr>
+                <tr>
+                    <td><select asp-for="ItemDetail.GeoLocation" asp-items="ViewBag.GeoLocation"></select></td>
+                    <td><input asp-for="ItemDetail.InstalledLocation" /></td>
+                    <td><input asp-for="ItemDetail.InstalledLocation2" /></td>
+                    <td><input asp-for="ItemDetail.StorageLocation" /></td>
+                </tr>
+            </table>
+        </div>
+
+
+        <div style="position:relative; clear:both; padding-top: 35px; border-bottom:1px; border-bottom-style:dashed; border-color: navy;">
+            <div style="font-size:large; font-weight:bold; color: cornflowerblue;">VM Information</div>
+            <table width="100%">
+                <tr>
+                    <th width="33%">@Html.DisplayNameFor(model => model.ItemDetail.Vm_Ram)</th>
+                    <th width="33%">@Html.DisplayNameFor(model => model.ItemDetail.Vm_Cpu)</th>
+                    <th width="33%">@Html.DisplayNameFor(model => model.ItemDetail.Vm_Os)</th>
+                </tr>
+                <tr>
+                    <td><input asp-for="ItemDetail.Vm_Ram" /></td>
+                    <td><input asp-for="ItemDetail.Vm_Cpu" /></td>
+                    <td><input asp-for="ItemDetail.Vm_Os" /></td>
+                </tr>
+            </table>
+        </div>
+
+        <div style="position:relative; clear:both; padding-top: 35px; border-bottom:1px; border-bottom-style:dashed; border-color: navy;">
+            <div style="font-size:large; font-weight:bold; color :cornflowerblue">Network Information | <a asp-page="/maint/ipinfo/create" asp-route-id="@Model.ItemDetail.ItemId">Add</a></div>
+
+            <table width="100%">
+                <tr>
+                    <th width="14%">@Html.DisplayNameFor(model => model.ItemIPInfo[0].IPAddress)</th>
+                    <th width="18%">@Html.DisplayNameFor(model => model.ItemIPInfo[0].hostname)</th>
+                    <th width="13%">@Html.DisplayNameFor(model => model.ItemIPInfo[0].netmask)</th>
+                    <th width="11%">@Html.DisplayNameFor(model => model.ItemIPInfo[0].gateway)</th>
+                    <th width="11%">@Html.DisplayNameFor(model => model.ItemIPInfo[0].DNSZone)</th>
+                    <th width="11%">@Html.DisplayNameFor(model => model.ItemIPInfo[0].DNS1)</th>
+                    <th width="11%">@Html.DisplayNameFor(model => model.ItemIPInfo[0].DNS2)</th>
+                    <th width="11%">@Html.DisplayNameFor(model => model.ItemIPInfo[0].DNS3)</th>
+                </tr>
+                @foreach (var item in Model.ItemIPInfo)
+                {
+                <tr>
+                    <td>@item.IPAddress</td>
+                    <td>@item.hostname</td>
+                    <td>@item.netmask</td>
+                    <td>@item.gateway</td>
+                    <td>@item.DNSZone</td>
+                    <td>@item.DNS1</td>
+                    <td>@item.DNS2</td>
+                    <td>@item.DNS3</td>
+                    <td><a asp-page="/maint/ipinfo/edit" asp-route-id="@item.IPID">Edit</a></td>
+                    <td><a asp-page="/maint/ipinfo/create" asp-route-id="@item.itemID">Add</a></td>
+                    <td><a asp-page="/maint/ipinfo/delete" asp-route-id="@item.IPID">Delete</a></td>
+                </tr>
+                }
+
+            </table>
+
+        </div>
+        <div style="position:relative; clear:both; padding-top: 35px; border-bottom:1px; border-bottom-style:dashed; border-color: navy;">
+            <div style="font-size:large; font-weight:bold; color: cornflowerblue;">License Information</div>
+            <table width="100%">
+                <tr>
+                    <th width="16.67%">@Html.DisplayNameFor(model => model.ItemDetail.LicenseStatus)</th>
+                    <th width="16.67%">@Html.DisplayNameFor(model => model.ItemDetail.LicenseMethod)</th>
+                    <th width="16.67%">@Html.DisplayNameFor(model => model.ItemDetail.LicenseQuantity)</th>
+                    <th width="16.67%">@Html.DisplayNameFor(model => model.ItemDetail.LicenseExpiration)</th>
+                    <th width="16.67%">@Html.DisplayNameFor(model => model.ItemDetail.LicenseFrequency)</th>
+                    <th width="16.67%">@Html.DisplayNameFor(model => model.ItemDetail.LicensePartNumber)</th>
+                </tr>
+                <tr>
+                    <td><input asp-for="ItemDetail.LicenseStatus" /></td>
+                    <td><input asp-for="ItemDetail.LicenseMethod" /></td>
+                    <td><input asp-for="ItemDetail.LicenseQuantity" /></td>
+                    <td><input asp-for="ItemDetail.LicenseExpiration" /></td>
+                    <td><input asp-for="ItemDetail.LicenseFrequency" /></td>
+                    <td><input asp-for="ItemDetail.LicensePartNumber" /></td>
+                </tr>
+            </table>
+        </div>
+
+        <div style="position:relative; clear:both; padding-top: 35px; border-bottom:1px; border-bottom-style:dashed; border-color: navy;">
+            <div style="font-size:large; font-weight:bold; color: cornflowerblue;">Order Information</div>
+            <table width="100%">
+                <tr>
+                    <th width="18%">@Html.DisplayNameFor(model => model.ItemDetail.OispinvoiceNum)</th>
+                    <th width="25%">@Html.DisplayNameFor(model => model.ItemDetail.VendorOrderRefNum)</th>
+                    <th width="18%">@Html.DisplayNameFor(model => model.ItemDetail.VendorCustomerNum)</th>
+                    <th width="19%">@Html.DisplayNameFor(model => model.ItemDetail.VendorSiteNum)</th>
+                    <th width="20%">&nbsp;</th>
+                </tr>
+                <tr>
+                    <td><input asp-for="ItemDetail.OispinvoiceNum" /></td>
+                    <td><input asp-for="ItemDetail.VendorOrderRefNum" /></td>
+                    <td><input asp-for="ItemDetail.VendorCustomerNum" /></td>
+                    <td><input asp-for="ItemDetail.VendorSiteNum" /></td>
+                    <td>&nbsp;</td>
+                </tr>
+                <tr>
+                    <th>@Html.DisplayNameFor(model => model.ItemDetail.OrderDate)</th>
+                    <th>@Html.DisplayNameFor(model => model.ItemDetail.InternalBillingCode)</th>
+                    <th>@Html.DisplayNameFor(model => model.ItemDetail.PurchaseCost)</th>
+                    <th>@Html.DisplayNameFor(model => model.ItemDetail.AnnualCost)</th>
+                    <th>@Html.DisplayNameFor(model => model.ItemDetail.MonthlyCost)</th>
+                </tr>
+                <tr>
+                    <td><input asp-for="ItemDetail.OrderDate" /></td>
+                    <td><input asp-for="ItemDetail.InternalBillingCode" /></td>
+                    <td><input asp-for="ItemDetail.PurchaseCost" /></td>
+                    <td><input asp-for="ItemDetail.AnnualCost" /></td>
+                    <td><input asp-for="ItemDetail.MonthlyCost" /></td>
+                </tr>
+            </table>
+        </div>
+        <input type="hidden" asp-for="ItemDetail.ItemId" />
+        <br />
+        <input type="submit" value="Save" class="btn btn-default" /> | <a asp-page="/ItemDetail" asp-route-id="@Model.ItemDetail.ItemId">Back to Detail</a>
+    </form>
+
+</div>

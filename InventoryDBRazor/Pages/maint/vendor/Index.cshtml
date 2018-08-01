@@ -1,0 +1,79 @@
+﻿@page
+@model InventoryDBRazor.Pages.maint.vendor.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Pages/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.ListVendor[0].vendorName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ListVendor[0].vendorAddress1)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ListVendor[0].vendorAddress2)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ListVendor[0].vendorCity)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ListVendor[0].vendorState)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ListVendor[0].vendorZip)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ListVendor[0].vendorPhone)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ListVendor[0].vendorURL)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.ListVendor) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.vendorName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.vendorAddress1)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.vendorAddress2)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.vendorCity)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.vendorState)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.vendorZip)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.vendorPhone)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.vendorURL)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.vendorID">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.vendorID">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.vendorID">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

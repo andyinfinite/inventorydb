@@ -1,0 +1,260 @@
+﻿@page
+@model InventoryDBRazor.Pages.maint.items.DetailsModel
+
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Pages/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>TblMain</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.TblMain.ItemName)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.TblMain.ItemName)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.TblMain.ItemDescription)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.TblMain.ItemDescription)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.TblMain.ItemOwnership)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.TblMain.ItemOwnership)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.TblMain.AdditionalInfo)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.TblMain.AdditionalInfo)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.TblMain.Vendor)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.TblMain.Vendor)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.TblMain.ModelNumber)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.TblMain.ModelNumber)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.TblMain.FirmwareVersion)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.TblMain.FirmwareVersion)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.TblMain.SoftwareVersion)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.TblMain.SoftwareVersion)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.TblMain.SerialNumber)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.TblMain.SerialNumber)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.TblMain.SerialNumber2)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.TblMain.SerialNumber2)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.TblMain.StateAssetTag)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.TblMain.StateAssetTag)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.TblMain.ProductKey)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.TblMain.ProductKey)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.TblMain.Eoldate)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.TblMain.Eoldate)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.TblMain.Eosdate)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.TblMain.Eosdate)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.TblMain.Manufacturer)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.TblMain.Manufacturer)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.TblMain.InstalledLocation)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.TblMain.InstalledLocation)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.TblMain.InstalledLocation2)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.TblMain.InstalledLocation2)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.TblMain.StorageLocation)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.TblMain.StorageLocation)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.TblMain.Vm_Ram)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.TblMain.Vm_Ram)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.TblMain.Vm_Cpu)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.TblMain.Vm_Cpu)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.TblMain.Vm_Os)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.TblMain.Vm_Os)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.TblMain.LicenseStatus)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.TblMain.LicenseStatus)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.TblMain.LicenseMethod)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.TblMain.LicenseMethod)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.TblMain.LicenseQuantity)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.TblMain.LicenseQuantity)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.TblMain.LicenseExpiration)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.TblMain.LicenseExpiration)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.TblMain.LicenseFrequency)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.TblMain.LicenseFrequency)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.TblMain.LicensePartNumber)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.TblMain.LicensePartNumber)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.TblMain.VendorOrderRefNum)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.TblMain.VendorOrderRefNum)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.TblMain.VendorCustomerNum)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.TblMain.VendorCustomerNum)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.TblMain.VendorSiteNum)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.TblMain.VendorSiteNum)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.TblMain.OrderDate)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.TblMain.OrderDate)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.TblMain.InternalBillingCode)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.TblMain.InternalBillingCode)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.TblMain.OispinvoiceNum)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.TblMain.OispinvoiceNum)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.TblMain.PurchaseCost)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.TblMain.PurchaseCost)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.TblMain.AnnualCost)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.TblMain.AnnualCost)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.TblMain.MonthlyCost)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.TblMain.MonthlyCost)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.TblMain.ListLocation)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.TblMain.ListLocation.LocationID)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.TblMain.ListTools)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.TblMain.ListTools.ToolId)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.TblMain.ListToolType)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.TblMain.ListToolType.TypeId)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.TblMain.ListStatus)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.TblMain.ListStatus.StatusID)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.TblMain.ItemId">Edit</a> |
+    <a asp-page="./Index">Back to List</a>
+</div>

@@ -1,0 +1,183 @@
+﻿@page
+@model ItemDetailModel
+@{var username = User.Identity.Name;}
+@{
+    ViewData["Title"] = "Item Detail";
+    Layout = "~/Pages/Shared/_Layout.cshtml";
+}
+
+<div>
+    <br />
+    <div>
+        <a asp-page="ItemDetail" asp-route-id="@(Model.pagenum-1)"><< Previous Item</a> | <a asp-page="ItemDetail" asp-route-id="@(Model.pagenum+1)">Next Item >></a>
+        <table>
+            <tr>
+                <td style="font-size:x-large; color:blue">@Html.DisplayFor(model => model.ItemDetail[0].ItemName) | @Html.DisplayFor(model => model.ItemDetail[0].ItemDescription)</td>
+                @if (username == "ID\\10144742") {<td><a asp-page="maint/ItemDetailEdit" asp-route-id="@Model.pagenum">Edit</a> | <a asp-page="maint/items/Delete" asp-route-id="@Model.ItemDetail[0].ItemId">Delete</a>
+</td>}
+            </tr>
+            <tr>
+                <td><b>Tool:</b> @Html.DisplayFor(model => model.ItemDetail[0].ListTools.ToolName) <b>Type:</b> @Html.DisplayFor(model => model.ItemDetail[0].ListToolType.ToolType)</td>
+            </tr>
+            <tr>
+                <td><b>Status:</b> @Html.DisplayFor(model => model.ItemDetail[0].ListStatus.Status)</td>
+            </tr>
+        </table>
+    </div>
+
+    <div style="border-bottom:1px; border-bottom-style:dashed; border-color: navy;">
+        <div>
+            <div style="font-size:large; font-weight:bold; padding-top: 20px;">Notes:</div>
+            <textarea cols="120" rows="6">@Html.DisplayFor(model => model.ItemDetail[0].AdditionalInfo)</textarea>
+        </div>
+    </div>
+
+
+    <div style="position:relative; top: 0px; padding-top: 35px; border-bottom:1px; border-bottom-style:dashed; border-color: navy;">
+        <div style="font-size:large; font-weight:bold; color: cornflowerblue;">Basic Information</div>
+        <table width="100%" align="top">
+            <tr>
+                <td valign="top" width="25%"><b>Vendor:</b><br />@if (Model.ItemDetail[0].Vendor != null) {@Model.ItemDetail[0].Vendor;} else { <b>--</b>}</td>
+                <td valign="top" width="25%"><b>Model Number:</b><br />@if (Model.ItemDetail[0].ModelNumber != null) {@Model.ItemDetail[0].ModelNumber;} else { <b>--</b>}</td>
+                <td valign="top" width="25%"><b>Serial Number:</b><br />@if (Model.ItemDetail[0].SerialNumber != null) {@Model.ItemDetail[0].SerialNumber;} else { <b>--</b>}</td>
+                <td valign="top" width="25%"><b>Serial Number 2:</b><br />@if (Model.ItemDetail[0].SerialNumber2 != null) {@Model.ItemDetail[0].SerialNumber2;} else { <b>--</b>}</td>
+            </tr>
+            <tr><td valign="top"><b>State Asset Tag:</b><br />@if (Model.ItemDetail[0].StateAssetTag != null) {@Model.ItemDetail[0].StateAssetTag;} else { <b>--</b>}</td>
+                <td valign="top"><b>Product Key:</b><br />@if (Model.ItemDetail[0].ProductKey != null) {@Model.ItemDetail[0].ProductKey;} else { <b>--</b>}</td>
+                <td valign="top"><b>Firmware Version:</b><br />@if (Model.ItemDetail[0].FirmwareVersion != null) {@Model.ItemDetail[0].FirmwareVersion;} else { <b>--</b>}</td>
+                <td valign="top"><b>Software Version:</b><br />@if (Model.ItemDetail[0].SoftwareVersion != null) {@Model.ItemDetail[0].SoftwareVersion;} else { <b>--</b>}</td>
+            </tr>
+            <tr>
+                <td valign="top"><b>Manufacturer:</b><br />@if (Model.ItemDetail[0].Manufacturer != null) {@Model.ItemDetail[0].Manufacturer;} else { <b>--</b>}</td>
+                <td valign="top"><b>End of Life:</b><br />@if (Model.ItemDetail[0].Eoldate != null) {@Model.ItemDetail[0].Eoldate.Value.ToString("d");} else { <b>--</b>}</td>
+                <td valign="top"><b>End of Service:</b><br />@if (Model.ItemDetail[0].Eosdate != null) {@Model.ItemDetail[0].Eosdate.Value.ToString("d");} else { <b>--</b>}</td>
+                <td valign="top"><b>Item Ownership:</b><br />@if (Model.ItemDetail[0].ItemOwnership != null) {@Model.ItemDetail[0].ItemOwnership;} else { <b>--</b>}</td>
+            </tr>
+        </table>
+    </div>
+
+    <div style="position:relative; clear:both; padding-top: 35px; border-bottom:1px; border-bottom-style:dashed; border-color: navy;">
+        <div style="font-size:large; font-weight:bold; color: cornflowerblue;">Location Information</div>
+        <table width="100%">
+            <tr>
+                <th width="25%">@Html.DisplayNameFor(model => model.ItemDetail[0].ListLocation.LocationName)</th>
+                <th width="25%">@Html.DisplayNameFor(model => model.ItemDetail[0].InstalledLocation)</th>
+                <th width="25%">@Html.DisplayNameFor(model => model.ItemDetail[0].InstalledLocation2)</th>
+                <th width="25%">@Html.DisplayNameFor(model => model.ItemDetail[0].StorageLocation)</th>
+            </tr>
+            <tr>
+                <td>@if (Model.ItemDetail[0].ListLocation.LocationName != null) {@Model.ItemDetail[0].ListLocation.LocationName;} else { <b>--</b>}</td>
+                <td>@if (Model.ItemDetail[0].InstalledLocation != null) {@Model.ItemDetail[0].InstalledLocation;} else { <b>--</b>} </td>
+                <td>@if (Model.ItemDetail[0].InstalledLocation2 != null) {@Model.ItemDetail[0].InstalledLocation2;} else { <b>--</b>}</td>
+                <td>@if (Model.ItemDetail[0].StorageLocation != null) {@Model.ItemDetail[0].StorageLocation;} else { <b>--</b>}</td>
+            </tr>
+        </table>
+    </div>
+
+    @if (Model.ItemDetail[0].ItemType == 6)
+    {
+        <div style="position:relative; clear:both; padding-top: 35px; border-bottom:1px; border-bottom-style:dashed; border-color: navy;">
+            <div style="font-size:large; font-weight:bold; color: cornflowerblue;">VM Information</div>
+            <table width="100%">
+                <tr>
+                    <th width="33%">@Html.DisplayNameFor(model => model.ItemDetail[0].Vm_Ram)</th>
+                    <th width="33%">@Html.DisplayNameFor(model => model.ItemDetail[0].Vm_Cpu)</th>
+                    <th width="33%">@Html.DisplayNameFor(model => model.ItemDetail[0].Vm_Os)</th>
+                </tr>
+                <tr>
+                    <td>@if (Model.ItemDetail[0].Vm_Ram != null) {@Model.ItemDetail[0].Vm_Ram; } else { <b>--</b>}</td>
+                    <td>@if (Model.ItemDetail[0].Vm_Cpu != null) {@Model.ItemDetail[0].Vm_Cpu; } else { <b>--</b>}</td>
+                    <td>@if (Model.ItemDetail[0].Vm_Os != null) {@Model.ItemDetail[0].Vm_Os; } else { <b>--</b>}</td>
+                </tr>
+            </table>
+        </div>
+    }
+
+    @if (Model.ItemIPInfo.Count > 0)
+    {
+        <div style="position:relative; clear:both; padding-top: 35px; border-bottom:1px; border-bottom-style:dashed; border-color: navy;">
+            <div style="font-size:large; font-weight:bold; color :cornflowerblue">Network Information</div>
+            <table width="100%">
+                <tr>
+                    <th width="14%">@Html.DisplayNameFor(model => model.ItemIPInfo[0].IPAddress)</th>
+                    <th width="18%">@Html.DisplayNameFor(model => model.ItemIPInfo[0].hostname)</th>
+                    <th width="13%">@Html.DisplayNameFor(model => model.ItemIPInfo[0].netmask)</th>
+                    <th width="11%">@Html.DisplayNameFor(model => model.ItemIPInfo[0].gateway)</th>
+                    <th width="11%">@Html.DisplayNameFor(model => model.ItemIPInfo[0].DNSZone)</th>
+                    <th width="11%">@Html.DisplayNameFor(model => model.ItemIPInfo[0].DNS1)</th>
+                    <th width="11%">@Html.DisplayNameFor(model => model.ItemIPInfo[0].DNS2)</th>
+                    <th width="11%">@Html.DisplayNameFor(model => model.ItemIPInfo[0].DNS3)</th>
+                </tr>
+                @foreach (var item in Model.ItemIPInfo)
+                {
+                    <tr>
+                        <td>@if (Model.ItemIPInfo[0].IPAddress != null) {@item.IPAddress;} else { <b>--</b>}</td>
+                        <td>@if (Model.ItemIPInfo[0].hostname != null) {@item.hostname;} else { <b>--</b>}</td>
+                        <td>@if (Model.ItemIPInfo[0].netmask != null) {@item.netmask;} else { <b>--</b>}</td>
+                        <td>@if (Model.ItemIPInfo[0].gateway != null) {@item.gateway;} else { <b>--</b>}</td>
+                        <td>@if (Model.ItemIPInfo[0].DNSZone != null) {@item.DNSZone;} else { <b>--</b>}</td>
+                        <td>@if (Model.ItemIPInfo[0].DNS1 != null) {@item.DNS1;} else { <b>--</b>}</td>
+                        <td>@if (Model.ItemIPInfo[0].DNS2 != null) {@item.DNS2;} else { <b>--</b>}</td>
+                        <td>@if (Model.ItemIPInfo[0].DNS3 != null) {@item.DNS3;} else { <b>--</b>}</td>
+                    </tr>
+                }
+            </table>
+        </div>
+    }
+    <div style="position:relative; clear:both; padding-top: 35px; border-bottom:1px; border-bottom-style:dashed; border-color: navy;">
+        <div style="font-size:large; font-weight:bold; color: cornflowerblue;">License Information</div>
+        <table width="100%">
+            <tr>
+                <th width="16.67%">@Html.DisplayNameFor(model => model.ItemDetail[0].LicenseStatus)</th>
+                <th width="16.67%">@Html.DisplayNameFor(model => model.ItemDetail[0].LicenseMethod)</th>
+                <th width="16.67%">@Html.DisplayNameFor(model => model.ItemDetail[0].LicenseQuantity)</th>
+                <th width="16.67%">@Html.DisplayNameFor(model => model.ItemDetail[0].LicenseExpiration)</th>
+                <th width="16.67%">@Html.DisplayNameFor(model => model.ItemDetail[0].LicenseFrequency)</th>
+                <th width="16.67%">@Html.DisplayNameFor(model => model.ItemDetail[0].LicensePartNumber)</th>
+            </tr>
+            <tr>
+                <td>@if (Model.ItemDetail[0].LicenseStatus != null) {@Model.ItemDetail[0].LicenseStatus;} else { <b>--</b>}</td>
+                <td>@if (Model.ItemDetail[0].LicenseMethod != null) {@Model.ItemDetail[0].LicenseMethod;} else { <b>--</b>}</td>
+                <td>@if (Model.ItemDetail[0].LicenseQuantity != null) {@Model.ItemDetail[0].LicenseQuantity;} else { <b>--</b>}</td>
+                <td>@if (Model.ItemDetail[0].LicenseExpiration != null) {@Model.ItemDetail[0].LicenseExpiration.Value.ToString("d");} else { <b>--</b>}</td>
+                <td>@if (Model.ItemDetail[0].LicenseFrequency != null) {@Model.ItemDetail[0].LicenseFrequency;} else { <b>--</b>}</td>
+                <td>@if (Model.ItemDetail[0].LicensePartNumber != null) {@Model.ItemDetail[0].LicensePartNumber;} else { <b>--</b>}</td>
+            </tr>
+        </table>
+    </div>
+
+    <div style="position:relative; clear:both; padding-top: 35px; border-bottom:1px; border-bottom-style:dashed; border-color: navy;">
+        <div style="font-size:large; font-weight:bold; color: cornflowerblue;">Order Information</div>
+        <table width="100%">
+            <tr>
+                <th width="18%">@Html.DisplayNameFor(model => model.ItemDetail[0].OispinvoiceNum)</th>
+                <th width="25%">@Html.DisplayNameFor(model => model.ItemDetail[0].VendorOrderRefNum)</th>
+                <th width="18%">@Html.DisplayNameFor(model => model.ItemDetail[0].VendorCustomerNum)</th>
+                <th width="19%">@Html.DisplayNameFor(model => model.ItemDetail[0].VendorSiteNum)</th>
+                <th width="20%">&nbsp;</th>
+            </tr>
+            <tr>
+                <td>@if (Model.ItemDetail[0].OispinvoiceNum != null) {@Model.ItemDetail[0].OispinvoiceNum;} else {<b>--</b>}</td>
+                <td>@if (Model.ItemDetail[0].VendorOrderRefNum != null) {@Model.ItemDetail[0].VendorOrderRefNum;} else { <b>--</b>}</td>
+                <td>@if (Model.ItemDetail[0].VendorCustomerNum != null) {@Model.ItemDetail[0].VendorCustomerNum;} else { <b>--</b>}</td>
+                <td>@if (Model.ItemDetail[0].VendorSiteNum != null) {@Model.ItemDetail[0].VendorSiteNum;} else { <b>--</b>}</td>
+                <td>&nbsp;</td>
+            </tr>
+            <tr>
+                <th>@Html.DisplayNameFor(model => model.ItemDetail[0].OrderDate)</th>
+                <th>@Html.DisplayNameFor(model => model.ItemDetail[0].InternalBillingCode)</th>
+                <th>@Html.DisplayNameFor(model => model.ItemDetail[0].PurchaseCost)</th>
+                <th>@Html.DisplayNameFor(model => model.ItemDetail[0].AnnualCost)</th>
+                <th>@Html.DisplayNameFor(model => model.ItemDetail[0].MonthlyCost)</th>
+            </tr>
+            <tr>
+                <td>@if (Model.ItemDetail[0].OrderDate != null) {@Model.ItemDetail[0].OrderDate.Value.ToString("d");} else { <b>--</b>}</td>
+                <td>@if (Model.ItemDetail[0].InternalBillingCode != null) {@Model.ItemDetail[0].InternalBillingCode;} else { <b>--</b>}</td>
+                <td>@if (Model.ItemDetail[0].PurchaseCost != null) {@Model.ItemDetail[0].PurchaseCost;} else { <b>--</b>}</td>
+                <td>@if (Model.ItemDetail[0].AnnualCost != null) {@Model.ItemDetail[0].AnnualCost;} else { <b>--</b>}</td>
+                <td>@if (Model.ItemDetail[0].MonthlyCost != null) {@Model.ItemDetail[0].MonthlyCost;} else { <b>--</b>}</td>
+            </tr>
+        </table>
+    </div>
+    <a asp-page="ItemDetail" asp-route-id="@(Model.pagenum-1)"><< Previous Item</a> | <a asp-page="ItemDetail" asp-route-id="@(Model.pagenum+1)">Next Item >></a>
+</div>

@@ -1,0 +1,70 @@
+﻿@page
+@model InventoryDBRazor.Pages.maint.vendor.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Pages/Shared/_Layout.cshtml";
+}
+
+<h2>Create</h2>
+
+<h4>ListVendor</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="ListVendor.vendorName" class="control-label"></label>
+                <input asp-for="ListVendor.vendorName" class="form-control" />
+                <span asp-validation-for="ListVendor.vendorName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ListVendor.vendorAddress1" class="control-label"></label>
+                <input asp-for="ListVendor.vendorAddress1" class="form-control" />
+                <span asp-validation-for="ListVendor.vendorAddress1" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ListVendor.vendorAddress2" class="control-label"></label>
+                <input asp-for="ListVendor.vendorAddress2" class="form-control" />
+                <span asp-validation-for="ListVendor.vendorAddress2" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ListVendor.vendorCity" class="control-label"></label>
+                <input asp-for="ListVendor.vendorCity" class="form-control" />
+                <span asp-validation-for="ListVendor.vendorCity" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ListVendor.vendorState" class="control-label"></label>
+                <input asp-for="ListVendor.vendorState" class="form-control" />
+                <span asp-validation-for="ListVendor.vendorState" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ListVendor.vendorZip" class="control-label"></label>
+                <input asp-for="ListVendor.vendorZip" class="form-control" />
+                <span asp-validation-for="ListVendor.vendorZip" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ListVendor.vendorPhone" class="control-label"></label>
+                <input asp-for="ListVendor.vendorPhone" class="form-control" />
+                <span asp-validation-for="ListVendor.vendorPhone" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ListVendor.vendorURL" class="control-label"></label>
+                <input asp-for="ListVendor.vendorURL" class="form-control" />
+                <span asp-validation-for="ListVendor.vendorURL" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

@@ -1,0 +1,68 @@
+﻿@page
+@model InventoryDBRazor.Pages.maint.ipinfo.DetailsModel
+
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Pages/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>IPInfo</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.IPInfo.IPAddress)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.IPInfo.IPAddress)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.IPInfo.hostname)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.IPInfo.hostname)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.IPInfo.netmask)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.IPInfo.netmask)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.IPInfo.gateway)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.IPInfo.gateway)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.IPInfo.DNS1)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.IPInfo.DNS1)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.IPInfo.DNS2)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.IPInfo.DNS2)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.IPInfo.DNS3)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.IPInfo.DNS3)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.IPInfo.DNSZone)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.IPInfo.DNSZone)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.IPInfo.IPID">Edit</a> |
+    <a asp-page="./Index">Back to List</a>
+</div>

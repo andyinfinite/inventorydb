@@ -1,0 +1,21 @@
+﻿@page
+@model InventoryDBRazor.Pages.AdminModel
+@{
+    ViewData["Title"] = "Admin";
+    Layout = "~/Pages/Shared/_Layout.cshtml";
+}
+
+<div>
+    <h3><a asp-page="maint/ItemDetailCreate">Add a new Inventory Item</a></h3>
+
+    <h3>Table Maintenance</h3>
+    <a asp-page="maint/locations/index">Locations</a><br />
+    <a asp-page="maint/tools/index">Tools</a><br />
+    <a asp-page="maint/tooltypes/index">Tool Types</a><br />
+    <a asp-page="maint/ipinfo/index">IP Info</a><br />
+    <a asp-page="maint/status/index">Status</a><br />
+    <br />
+    <h4>All Items</h4>
+    <a asp-page="maint/items/index">Everything in a massive spreadsheet.</a>
+    
+</div>

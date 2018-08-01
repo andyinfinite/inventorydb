@@ -1,0 +1,68 @@
+﻿@page
+@model InventoryDBRazor.Pages.maint.ipinfo.EditModel
+
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Pages/Shared/_Layout.cshtml";
+}
+
+<h2>Edit</h2>
+
+<h4>IPInfo</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="IPInfo.IPID" />
+            <input type="hidden" asp-for="IPInfo.itemID" />
+            <div class="form-group">
+                <label asp-for="IPInfo.IPAddress" class="control-label"></label>
+                <input asp-for="IPInfo.IPAddress" class="form-control" />
+                <span asp-validation-for="IPInfo.IPAddress" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="IPInfo.hostname" class="control-label"></label>
+                <input asp-for="IPInfo.hostname" class="form-control" />
+                <span asp-validation-for="IPInfo.hostname" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="IPInfo.netmask" class="control-label"></label>
+                <input asp-for="IPInfo.netmask" class="form-control" />
+                <span asp-validation-for="IPInfo.netmask" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="IPInfo.gateway" class="control-label"></label>
+                <input asp-for="IPInfo.gateway" class="form-control" />
+                <span asp-validation-for="IPInfo.gateway" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="IPInfo.DNS1" class="control-label"></label>
+                <input asp-for="IPInfo.DNS1" class="form-control" />
+                <span asp-validation-for="IPInfo.DNS1" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="IPInfo.DNS2" class="control-label"></label>
+                <input asp-for="IPInfo.DNS2" class="form-control" />
+                <span asp-validation-for="IPInfo.DNS2" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="IPInfo.DNS3" class="control-label"></label>
+                <input asp-for="IPInfo.DNS3" class="form-control" />
+                <span asp-validation-for="IPInfo.DNS3" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="IPInfo.DNSZone" class="control-label"></label>
+                <input asp-for="IPInfo.DNSZone" class="form-control" />
+                <span asp-validation-for="IPInfo.DNSZone" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-default" /> | <a asp-page="/ItemDetail" asp-route-id="@Model.IPInfo.itemID">Back to Detail</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

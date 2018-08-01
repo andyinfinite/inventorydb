@@ -1,0 +1,271 @@
+﻿@page
+@model InventoryDBRazor.Pages.maint.items.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Pages/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.TblMain[0].ItemName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TblMain[0].ItemDescription)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TblMain[0].ItemOwnership)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TblMain[0].AdditionalInfo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TblMain[0].Vendor)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TblMain[0].ModelNumber)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TblMain[0].FirmwareVersion)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TblMain[0].SoftwareVersion)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TblMain[0].SerialNumber)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TblMain[0].SerialNumber2)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TblMain[0].StateAssetTag)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TblMain[0].ProductKey)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TblMain[0].Eoldate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TblMain[0].Eosdate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TblMain[0].Manufacturer)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TblMain[0].InstalledLocation)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TblMain[0].InstalledLocation2)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TblMain[0].StorageLocation)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TblMain[0].Vm_Ram)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TblMain[0].Vm_Cpu)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TblMain[0].Vm_Os)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TblMain[0].LicenseStatus)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TblMain[0].LicenseMethod)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TblMain[0].LicenseQuantity)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TblMain[0].LicenseExpiration)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TblMain[0].LicenseFrequency)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TblMain[0].LicensePartNumber)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TblMain[0].VendorOrderRefNum)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TblMain[0].VendorCustomerNum)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TblMain[0].VendorSiteNum)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TblMain[0].OrderDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TblMain[0].InternalBillingCode)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TblMain[0].OispinvoiceNum)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TblMain[0].PurchaseCost)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TblMain[0].AnnualCost)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TblMain[0].MonthlyCost)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TblMain[0].ListLocation)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TblMain[0].ListTools)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TblMain[0].ListToolType)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TblMain[0].ListStatus)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.TblMain) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.ItemName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ItemDescription)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ItemOwnership)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AdditionalInfo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Vendor)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ModelNumber)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FirmwareVersion)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SoftwareVersion)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SerialNumber)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SerialNumber2)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.StateAssetTag)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ProductKey)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Eoldate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Eosdate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Manufacturer)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.InstalledLocation)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.InstalledLocation2)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.StorageLocation)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Vm_Ram)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Vm_Cpu)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Vm_Os)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LicenseStatus)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LicenseMethod)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LicenseQuantity)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LicenseExpiration)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LicenseFrequency)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LicensePartNumber)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.VendorOrderRefNum)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.VendorCustomerNum)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.VendorSiteNum)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.OrderDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.InternalBillingCode)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.OispinvoiceNum)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PurchaseCost)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AnnualCost)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MonthlyCost)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ListLocation.LocationID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ListTools.ToolId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ListToolType.TypeId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ListStatus.StatusID)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.ItemId">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.ItemId">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.ItemId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
