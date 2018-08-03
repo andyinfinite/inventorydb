@@ -33,9 +33,9 @@
                 <ul class="nav navbar-nav">
                     <li><a asp-page="/Index">Home</a></li>
                     <li><a asp-page="/List">Full List</a></li>
-                        <li><a asp-page="/Admin">Admin</a></li>
+                    <li><a asp-page="/Admin">Admin</a></li>
                 </ul>
-                <p class="nav navbar-text navbar-right">Hello, @User.Identity.Name!</p>
+                <p class="nav navbar-text navbar-right">Hello, @username!</p>
             </div>
         </div>
     </nav>
@@ -44,7 +44,7 @@
 
     <div class="container body-content">
         @RenderBody()
-        
+
         <footer style="float:left; width: 100%;">
             <hr />
             <p>&copy; 2018 - OISP Inventory DB</p>

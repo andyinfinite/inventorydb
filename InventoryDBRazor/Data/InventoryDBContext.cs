@@ -17,6 +17,7 @@ namespace InventoryDBRazor.Models
         {
         }
 
+        public virtual DbSet<ListAdmins> ListAdmins { get; set; }
         public virtual DbSet<ListLocation> ListLocation { get; set; }
         public virtual DbSet<ListTools> ListTools { get; set; }
         public virtual DbSet<ListToolType> ListToolType { get; set; }
