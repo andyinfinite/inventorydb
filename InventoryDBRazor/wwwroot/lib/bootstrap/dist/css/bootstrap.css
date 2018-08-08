@@ -6767,3 +6767,17 @@ button.close {
   }
 }
 /*# sourceMappingURL=bootstrap.css.map */
+.hoverTable {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+/* Define the default color for all the table rows */
+.hoverTable tr {
+    background: #FFFFFF;
+}
+
+/* Define the hover highlight color for the table row */
+.hoverTable tr:hover {
+    background-color: #8e9bbf;
+}

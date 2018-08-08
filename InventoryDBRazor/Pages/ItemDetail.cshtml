@@ -147,17 +147,47 @@
     </div>
 
     <div style="position:relative; clear:both; padding-top: 35px; border-bottom:1px; border-bottom-style:dashed; border-color: navy;">
-        <div style="font-size:large; font-weight:bold; color: cornflowerblue;">Order Information</div>
+        <div style="font-size:large; font-weight:bold; color: cornflowerblue;">Order Information (New)</div>
         <table width="100%">
             <tr>
-                <th width="18%">@Html.DisplayNameFor(model => model.ItemDetail[0].OispinvoiceNum)</th>
+                <th width="18%">@Html.DisplayNameFor(model => model.ItemDetail[0].RequestForQuote)</th>
+                <th width="25%">@Html.DisplayNameFor(model => model.ItemDetail[0].SelectedQuote)</th>
+                <th width="18%">@Html.DisplayNameFor(model => model.ItemDetail[0].AgencyPurchaseRequest)</th>
+                <th width="19%">@Html.DisplayNameFor(model => model.ItemDetail[0].PurchaseOrder)</th>
+                <th width="20%">&nbsp;</th>
+            </tr>
+            <tr>
+                <td>@if (Model.ItemDetail[0].RequestForQuote != null) {@Model.ItemDetail[0].RequestForQuote;} else {<b>--</b>}</td>
+                <td>@if (Model.ItemDetail[0].SelectedQuote != null) {@Model.ItemDetail[0].SelectedQuote;} else { <b>--</b>}</td>
+                <td>@if (Model.ItemDetail[0].AgencyPurchaseRequest != null) {@Model.ItemDetail[0].AgencyPurchaseRequest;} else { <b>--</b>}</td>
+                <td>@if (Model.ItemDetail[0].PurchaseOrder != null) {@Model.ItemDetail[0].PurchaseOrder;} else { <b>--</b>}</td>
+                <td>&nbsp;</td>
+            </tr>
+            <tr>
+                <th>@Html.DisplayNameFor(model => model.ItemDetail[0].OrderDate)</th>
+                <th>@Html.DisplayNameFor(model => model.ItemDetail[0].PurchaseCost)</th>
+                <th>@Html.DisplayNameFor(model => model.ItemDetail[0].SupportCost)</th>
+            </tr>
+            <tr>
+                <td>@if (Model.ItemDetail[0].OrderDate != null) {@Model.ItemDetail[0].OrderDate.Value.ToString("d");} else { <b>--</b>}</td>
+                <td>@if (Model.ItemDetail[0].PurchaseCost != null) {@Model.ItemDetail[0].PurchaseCost;} else { <b>--</b>}</td>
+                <td>@if (Model.ItemDetail[0].SupportCost != null) {@Model.ItemDetail[0].SupportCost;} else { <b>--</b>}</td>
+            </tr>
+        </table>
+    </div>
+
+    <div style="position:relative; clear:both; padding-top: 35px; border-bottom:1px; border-bottom-style:dashed; border-color: navy;">
+        <div style="font-size:large; font-weight:bold; color: cornflowerblue;">Order Information (Old)</div>
+        <table width="100%">
+            <tr>
+                <th width="18%">@Html.DisplayNameFor(model => model.ItemDetail[0].PurchaseOrder)</th>
                 <th width="25%">@Html.DisplayNameFor(model => model.ItemDetail[0].VendorOrderRefNum)</th>
                 <th width="18%">@Html.DisplayNameFor(model => model.ItemDetail[0].VendorCustomerNum)</th>
                 <th width="19%">@Html.DisplayNameFor(model => model.ItemDetail[0].VendorSiteNum)</th>
                 <th width="20%">&nbsp;</th>
             </tr>
             <tr>
-                <td>@if (Model.ItemDetail[0].OispinvoiceNum != null) {@Model.ItemDetail[0].OispinvoiceNum;} else {<b>--</b>}</td>
+                <td>@if (Model.ItemDetail[0].PurchaseOrder != null) {@Model.ItemDetail[0].PurchaseOrder;} else {<b>--</b>}</td>
                 <td>@if (Model.ItemDetail[0].VendorOrderRefNum != null) {@Model.ItemDetail[0].VendorOrderRefNum;} else { <b>--</b>}</td>
                 <td>@if (Model.ItemDetail[0].VendorCustomerNum != null) {@Model.ItemDetail[0].VendorCustomerNum;} else { <b>--</b>}</td>
                 <td>@if (Model.ItemDetail[0].VendorSiteNum != null) {@Model.ItemDetail[0].VendorSiteNum;} else { <b>--</b>}</td>
@@ -167,15 +197,15 @@
                 <th>@Html.DisplayNameFor(model => model.ItemDetail[0].OrderDate)</th>
                 <th>@Html.DisplayNameFor(model => model.ItemDetail[0].InternalBillingCode)</th>
                 <th>@Html.DisplayNameFor(model => model.ItemDetail[0].PurchaseCost)</th>
-                <th>@Html.DisplayNameFor(model => model.ItemDetail[0].AnnualCost)</th>
-                <th>@Html.DisplayNameFor(model => model.ItemDetail[0].MonthlyCost)</th>
+                <th>@Html.DisplayNameFor(model => model.ItemDetail[0].SupportCost)</th>
+                <th>&nbsp;</th>
             </tr>
             <tr>
                 <td>@if (Model.ItemDetail[0].OrderDate != null) {@Model.ItemDetail[0].OrderDate.Value.ToString("d");} else { <b>--</b>}</td>
                 <td>@if (Model.ItemDetail[0].InternalBillingCode != null) {@Model.ItemDetail[0].InternalBillingCode;} else { <b>--</b>}</td>
                 <td>@if (Model.ItemDetail[0].PurchaseCost != null) {@Model.ItemDetail[0].PurchaseCost;} else { <b>--</b>}</td>
-                <td>@if (Model.ItemDetail[0].AnnualCost != null) {@Model.ItemDetail[0].AnnualCost;} else { <b>--</b>}</td>
-                <td>@if (Model.ItemDetail[0].MonthlyCost != null) {@Model.ItemDetail[0].MonthlyCost;} else { <b>--</b>}</td>
+                <td>@if (Model.ItemDetail[0].SupportCost != null) {@Model.ItemDetail[0].SupportCost;} else { <b>--</b>}</td>
+                <td>&nbsp;</td>
             </tr>
         </table>
     </div>

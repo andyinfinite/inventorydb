@@ -54,10 +54,10 @@ namespace InventoryDBRazor.Pages.maint
                 .Where(n => n.itemID == id)
                 .ToListAsync();
 
-            ViewData["ToolName"] = new SelectList(_context.ListTools, "ToolId", "ToolName", id);
-            ViewData["ToolType"] = new SelectList(_context.ListToolType, "TypeId", "ToolType");
-            ViewData["GeoLocation"] = new SelectList(_context.ListLocation, "LocationID", "LocationName");
-            ViewData["StatusID"] = new SelectList(_context.ListStatus, "StatusID", "Status");
+            ViewData["ToolName"] = new SelectList(_context.ListTools.OrderBy(t => t.ToolName), "ToolId", "ToolName");
+            ViewData["ToolType"] = new SelectList(_context.ListToolType.OrderBy(tt => tt.ToolType), "TypeId", "ToolType");
+            ViewData["GeoLocation"] = new SelectList(_context.ListLocation.OrderBy(l=> l.LocationName), "LocationID", "LocationName");
+            ViewData["StatusID"] = new SelectList(_context.ListStatus.OrderBy(s => s.Status), "StatusID", "Status");
 
             return Page();
 

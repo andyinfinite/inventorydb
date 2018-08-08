@@ -123,20 +123,25 @@ namespace InventoryDBRazor.Models
         [Display(Name ="Internal Billing Number")]
         public string InternalBillingCode { get; set; }
 
-        [Display(Name ="OISP Invoice Number")]
-        public string OispinvoiceNum { get; set; }
+        [Display(Name = "RFQ Number")]
+        public string RequestForQuote { get; set; }
+
+        [Display(Name = "Selected Quote Number")]
+        public string SelectedQuote { get; set; }
+
+        [Display(Name = "APR Number")]
+        public string AgencyPurchaseRequest { get; set; }
+    
+        [Display(Name ="Purchase Order Number")]
+        public string PurchaseOrder { get; set; }
 
         [Display(Name ="Purchase Cost")]
         [DataType(DataType.Currency)]
         public int? PurchaseCost { get; set; }
 
-        [Display(Name ="Annual Cost")]
+        [Display(Name ="Support Cost")]
         [DataType(DataType.Currency)]
-        public int? AnnualCost { get; set; }
-
-        [Display(Name ="Monthly Cost")]
-        [DataType(DataType.Currency)]
-        public int? MonthlyCost { get; set; }
+        public int? SupportCost { get; set; }
 
         [Key]
         public int ItemId { get; set; }

@@ -151,32 +151,28 @@
             <div style="font-size:large; font-weight:bold; color: cornflowerblue;">Order Information</div>
             <table width="100%">
                 <tr>
-                    <th width="18%">@Html.DisplayNameFor(model => model.ItemDetail.OispinvoiceNum)</th>
-                    <th width="25%">@Html.DisplayNameFor(model => model.ItemDetail.VendorOrderRefNum)</th>
-                    <th width="18%">@Html.DisplayNameFor(model => model.ItemDetail.VendorCustomerNum)</th>
-                    <th width="19%">@Html.DisplayNameFor(model => model.ItemDetail.VendorSiteNum)</th>
+                    <th width="18%">@Html.DisplayNameFor(model => model.ItemDetail.RequestForQuote)</th>
+                    <th width="25%">@Html.DisplayNameFor(model => model.ItemDetail.SelectedQuote)</th>
+                    <th width="18%">@Html.DisplayNameFor(model => model.ItemDetail.AgencyPurchaseRequest)</th>
+                    <th width="19%">@Html.DisplayNameFor(model => model.ItemDetail.PurchaseOrder)</th>
                     <th width="20%">&nbsp;</th>
                 </tr>
                 <tr>
-                    <td><input asp-for="ItemDetail.OispinvoiceNum" /></td>
-                    <td><input asp-for="ItemDetail.VendorOrderRefNum" /></td>
-                    <td><input asp-for="ItemDetail.VendorCustomerNum" /></td>
-                    <td><input asp-for="ItemDetail.VendorSiteNum" /></td>
+                    <td><input asp-for="ItemDetail.RequestForQuote" /></td>
+                    <td><input asp-for="ItemDetail.SelectedQuote" /></td>
+                    <td><input asp-for="ItemDetail.AgencyPurchaseRequest" /></td>
+                    <td><input asp-for="ItemDetail.PurchaseOrder" /></td>
                     <td>&nbsp;</td>
                 </tr>
                 <tr>
                     <th>@Html.DisplayNameFor(model => model.ItemDetail.OrderDate)</th>
-                    <th>@Html.DisplayNameFor(model => model.ItemDetail.InternalBillingCode)</th>
                     <th>@Html.DisplayNameFor(model => model.ItemDetail.PurchaseCost)</th>
-                    <th>@Html.DisplayNameFor(model => model.ItemDetail.AnnualCost)</th>
-                    <th>@Html.DisplayNameFor(model => model.ItemDetail.MonthlyCost)</th>
+                    <th>@Html.DisplayNameFor(model => model.ItemDetail.SupportCost)</th>
                 </tr>
                 <tr>
                     <td><input asp-for="ItemDetail.OrderDate" /></td>
-                    <td><input asp-for="ItemDetail.InternalBillingCode" /></td>
                     <td><input asp-for="ItemDetail.PurchaseCost" /></td>
-                    <td><input asp-for="ItemDetail.AnnualCost" /></td>
-                    <td><input asp-for="ItemDetail.MonthlyCost" /></td>
+                    <td><input asp-for="ItemDetail.SupportCost" /></td>
                 </tr>
             </table>
         </div>
