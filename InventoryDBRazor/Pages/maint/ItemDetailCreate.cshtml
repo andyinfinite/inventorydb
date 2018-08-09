@@ -37,10 +37,10 @@
             <div style="font-size:large; font-weight:bold; color: cornflowerblue;">Basic Information</div>
             <table width="100%" align="top">
                 <tr>
-                    <td valign="top" width="25%"><b>Vendor:</b><br /><input asp-for="ItemDetail.Vendor" /></td>
-                    <td valign="top" width="25%"><b>Model Number:</b><br /><input asp-for="ItemDetail.ModelNumber" /></td>
-                    <td valign="top" width="25%"><b>Serial Number:</b><br /><input asp-for="ItemDetail.SerialNumber" /></td>
-                    <td valign="top" width="25%"><b>Serial Number 2:</b><br /><input asp-for="ItemDetail.SerialNumber2" /></td>
+                    <td valign="top" width="25%"><b>Vendor:</b><br /><input asp-for="ItemDetail.Vendor" title="Name of the item vendor (IBM, Bluecoat, etc.)" /></td>
+                    <td valign="top" width="25%"><b>Model Number:</b><br /><input asp-for="ItemDetail.ModelNumber" title="Model number of the item (XGS 5100, 1628-C, etc.)" /></td>
+                    <td valign="top" width="25%"><b>Serial Number:</b><br /><input asp-for="ItemDetail.SerialNumber" title="Serial number of the item" /></td>
+                    <td valign="top" width="25%"><b>Serial Number 2:</b><br /><input asp-for="ItemDetail.SerialNumber2" title="Use when a second serial is present (such as a QRadar collector on a Dell server)"/></td>
                 </tr>
                 <tr>
                     <td valign="top"><b>State Asset Tag:</b><br /><input asp-for="ItemDetail.StateAssetTag" /></td>

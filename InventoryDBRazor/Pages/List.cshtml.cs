@@ -40,6 +40,7 @@ namespace InventoryDBRazor.Pages
                 .Include(t => t.ListTools)
                 .Include(tt => tt.ListToolType)
                 .Include(s => s.ListStatus)
+                .OrderBy(i => i.ListTools.ToolName).ThenBy(i => i.ItemName)
                 .ToListAsync();
         }
     }

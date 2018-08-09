@@ -13,7 +13,7 @@
         <table>
             <tr>
                 <td style="font-size:x-large; color:blue">@Html.DisplayFor(model => model.ItemDetail[0].ItemName) | @Html.DisplayFor(model => model.ItemDetail[0].ItemDescription)</td>
-                @if (username != null) {<td><a asp-page="maint/ItemDetailEdit" asp-route-id="@Model.pagenum">Edit</a> | <a asp-page="maint/items/Delete" asp-route-id="@Model.ItemDetail[0].ItemId">Delete</a>
+                @if (username != null) {<td><a asp-page="maint/ItemDetailEdit" asp-route-id="@Model.pagenum">Edit</a>
 </td>}
             </tr>
             <tr>

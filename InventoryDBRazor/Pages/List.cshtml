@@ -19,6 +19,7 @@
 <table class="hoverTable text-nowrap">
     <thead>
         <tr style="padding-left: 5px; padding-right: 5px;">
+            <th></th>
             <th>
                 @Html.DisplayNameFor(model => model.Items[0].ItemName)
             </th>
@@ -43,42 +44,40 @@
             <th>
                 @Html.DisplayNameFor(model => model.Items[0].ToolName)
             </th>
-
-            <th></th>
         </tr>
     </thead>
     <tbody>
         @foreach (var item in Model.Items)
         {
-            <tr class="text-nowrap">
-                <td>
-                    @Html.DisplayFor(modelItem => item.ItemName)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.ItemDescription)
-                </td>
-                <td>
-                    <a asp-page="List" asp-route-gloc="@item.GeoLocation">@Html.DisplayFor(modelItem => item.ListLocation.LocationName)</a>
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.InstalledLocation)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.InstalledLocation2)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.StorageLocation)
-                </td>
-                <td>
-                    <a asp-page="List" asp-route-tooltype="@item.ItemType">@Html.DisplayFor(modelItem => item.ListToolType.ToolType)</a>
-                </td>
-                <td>
-                    <a asp-page="List" asp-route-tool="@item.ToolName">@Html.DisplayFor(modelItem => item.ListTools.ToolName)</a>
-                </td>
-                <td>
-                    <a asp-page="ItemDetail" asp-route-id="@item.ItemId">Details</a>
-                </td>
-            </tr>
+        <tr class="text-nowrap">
+            <td>
+                <a asp-page="ItemDetail" asp-route-id="@item.ItemId">Details</a>
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ItemName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ItemDescription)
+            </td>
+            <td>
+                <a asp-page="List" asp-route-gloc="@item.GeoLocation">@Html.DisplayFor(modelItem => item.ListLocation.LocationName)</a>
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.InstalledLocation)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.InstalledLocation2)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.StorageLocation)
+            </td>
+            <td>
+                <a asp-page="List" asp-route-tooltype="@item.ItemType">@Html.DisplayFor(modelItem => item.ListToolType.ToolType)</a>
+            </td>
+            <td>
+                <a asp-page="List" asp-route-tool="@item.ToolName">@Html.DisplayFor(modelItem => item.ListTools.ToolName)</a>
+            </td>
+        </tr>
         }
     </tbody>
 </table>

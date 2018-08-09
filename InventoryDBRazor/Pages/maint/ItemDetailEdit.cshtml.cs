@@ -19,7 +19,6 @@ namespace InventoryDBRazor.Pages.maint
             _context = context;
         }
 
-//        public TblMain TblMain { get; set; }
         [BindProperty]
         public TblMain ItemDetail { get; set; }
         public IList<IPInfo> ItemIPInfo { get; set; }
@@ -30,17 +29,6 @@ namespace InventoryDBRazor.Pages.maint
             {
                 return NotFound();
             }
-
-            //TblMain = await _context.TblMain
-            //    .Include(t => t.ListLocation)
-            //    .Include(t => t.ListStatus)
-            //    .Include(t => t.ListToolType)
-            //    .Include(t => t.ListTools).FirstOrDefaultAsync(m => m.ItemId == id);
-
-            //if (TblMain == null)
-            //{
-            //    return NotFound();
-            //}
 
             ItemDetail = await _context.TblMain
                 .Include(t => t.ListLocation)
