@@ -44,7 +44,8 @@
     </div>
 
     <div class="column">
-        <h2>&nbsp;</h2>
+        <h2>CSV Reports</h2>
+        <a href="~/images/ManagementReport.csv">Management Inventory Report</a>
     </div>
 </div>
 <div class="row">
@@ -66,7 +67,7 @@
                 {
                     <tr class="table; text-nowrap">
                         <td>
-                            <a asp-page="List" asp-route-tool="@lic.ToolID">@Html.DisplayFor(ModelNoLicCount => lic.ToolName)</a>
+                            <a asp-page="List" asp-route-tool="@lic.ToolID" asp-route-mode="missing">@Html.DisplayFor(ModelNoLicCount => lic.ToolName)</a>
                         </td>
                         <td style="text-align: center;">
                             @Html.DisplayFor(ModelNoLicCount => lic.NoLicCount)
@@ -94,7 +95,7 @@
                 {
                     <tr class="table; text-nowrap">
                         <td>
-                            <a asp-page="List" asp-route-tool="@exp.ToolID">@Html.DisplayFor(expCount => exp.ToolName)</a>
+                            <a asp-page="List" asp-route-tool="@exp.ToolID" asp-route-mode="expired">@Html.DisplayFor(expCount => exp.ToolName)</a>
                         </td>
                         <td style="text-align: center;">
                             @Html.DisplayFor(expCount => exp.ExpLicCount)

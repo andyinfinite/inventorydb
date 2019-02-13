@@ -20,10 +20,10 @@ namespace InventoryDBRazor.Pages.maint.items
 
         public IActionResult OnGet()
         {
-            ViewData["GeoLocation"] = new SelectList(_context.ListLocation, "LocationID", "LocationID");
-            ViewData["StatusID"] = new SelectList(_context.ListStatus, "StatusID", "StatusID");
-            ViewData["ItemType"] = new SelectList(_context.ListToolType, "TypeId", "TypeId");
-            ViewData["ToolName"] = new SelectList(_context.ListTools, "ToolId", "ToolId");
+            ViewData["GeoLocation"] = new SelectList(_context.ListLocation, "LocationID", "LocationName");
+            ViewData["StatusID"] = new SelectList(_context.ListStatus, "StatusID", "Status");
+            ViewData["ItemType"] = new SelectList(_context.ListToolType, "TypeId", "ToolType");
+            ViewData["ToolName"] = new SelectList(_context.ListTools, "ToolId", "ToolName");
             return Page();
         }
 

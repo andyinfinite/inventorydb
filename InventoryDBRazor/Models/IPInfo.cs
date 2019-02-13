@@ -15,7 +15,7 @@ namespace InventoryDBRazor.Models
         [Display(Name = "IP Address")]
         public string IPAddress { get; set; }
 
-        [Display(Name = "Hostname")]
+        [Display(Name = "Hostname (FQDN)")]
         public string hostname { get; set; }
 
         [Display(Name = "Netmask")]

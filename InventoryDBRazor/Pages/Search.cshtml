@@ -1,0 +1,345 @@
+﻿@page
+@model InventoryDBRazor.Pages.SearchModel
+
+@{
+    ViewData["Title"] = "Search";
+    Layout = "~/Pages/Shared/_Layout.cshtml";
+}
+
+
+<form>
+    <p>
+        <br />
+        Search Text: <input type="text" name="searchString" />
+        <input type="submit" value="Filter" />
+    </p>
+</form>
+
+@if (Model.Items != null) {
+
+<table class="hoverTable text-nowrap">
+    <thead>
+        <tr style="padding-left: 5px; padding-right: 5px;">
+            <th></th>
+            <th>
+                @Html.DisplayNameFor(model => model.Items[0].ItemName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Items[0].ItemDescription)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Items[0].ItemOwnership)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Items[0].AdditionalInfo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Items[0].ToolName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Items[0].ToolType)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Items[0].Status)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Items[0].LocationName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Items[0].hostname)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Items[0].IPAddress)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Items[0].netmask)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Items[0].gateway)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Items[0].DNS1)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Items[0].DNS2)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Items[0].DNS3)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Items[0].ModelNumber)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Items[0].FirmwareVersion)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Items[0].SoftwareVersion)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Items[0].SerialNumber)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Items[0].SerialNumber2)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Items[0].StateAssetTag)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Items[0].ProductKey)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Items[0].EOLDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Items[0].EOSDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Items[0].Manufacturer)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Items[0].InstalledLocation)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Items[0].InstalledLocation2)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Items[0].StorageLocation)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Items[0].VM_OS)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Items[0].VM_RAM)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Items[0].VM_CPU)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Items[0].LicenseStatus)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Items[0].LicenseMethod)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Items[0].LicenseQuantity)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Items[0].LicenseExpiration)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Items[0].LicenseFrequency)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Items[0].LicensePartNumber)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Items[0].VendorOrderRefNum)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Items[0].VendorCustomerNum)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Items[0].VendorSiteNum)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Items[0].OrderDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Items[0].InternalBillingCode)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Items[0].PurchaseOrder)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Items[0].RequestForQuote)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Items[0].SelectedQuote)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Items[0].AgencyPurchaseRequest)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Items[0].PurchaseCost)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Items[0].SupportCost)
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.Items)
+        {
+        <tr class="text-nowrap">
+            <td>
+                <a asp-page="ItemDetail" asp-route-id="@item.ItemId" target="_blank">Details</a>
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ItemName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ItemDescription)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ItemOwnership)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AdditionalInfo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ToolName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ToolType)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Status)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LocationName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.hostname)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IPAddress)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.netmask)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.gateway)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DNS1)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DNS2)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DNS3)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ModelNumber)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FirmwareVersion)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SoftwareVersion)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SerialNumber)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SerialNumber2)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.StateAssetTag)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ProductKey)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EOLDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EOSDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Manufacturer)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.InstalledLocation)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.InstalledLocation2)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.StorageLocation)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.VM_OS)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.VM_RAM)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.VM_CPU)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LicenseStatus)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LicenseMethod)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LicenseQuantity)
+            </td>
+            <td>
+                @if (item.LicenseExpiration < DateTime.Now)
+                {
+                <span style="color:crimson;">@item.LicenseExpiration.Value.ToString("d")</span>
+                }
+                else if (item.LicenseExpiration >= DateTime.Now)
+                {
+                <span style="color:forestgreen;">@item.LicenseExpiration.Value.ToString("d")</span>
+                }
+                else
+                {
+                <span style="color:lightgray; font-style:italic">Click "Details" on left and add.</span>
+                }
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LicenseFrequency)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LicensePartNumber)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.VendorOrderRefNum)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.VendorCustomerNum)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.VendorSiteNum)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.OrderDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.InternalBillingCode)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PurchaseOrder)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RequestForQuote)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SelectedQuote)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AgencyPurchaseRequest)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PurchaseCost)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SupportCost)
+            </td>
+        </tr>
+        }
+    </tbody>
+</table>
+
+
+} else {
+
+<span>
+    Enter you search text in the field above.  Thi is a full-text search and will find partial matches as well.
+    <B>Example:</B> Entering "10.252.13" will return all items in the 10.252.13 subnet.
+</span>
+
+}

@@ -19,14 +19,18 @@ namespace InventoryDBRazor.Pages
         
         public IList<TblMain> Items { get; set; }
  
-        public async Task OnGetAsync(string searchString, int? tool, int? tooltype, int? gloc)
+        public async Task OnGetAsync(string searchString, int? tool, int? tooltype, int? gloc, string mode)
         {
                
             var items = from i in _context.TblMain select i;
-        
+
             if (!String.IsNullOrEmpty(searchString))
             {
                 items = items.Where(s => s.ItemName.Contains(searchString));
+            } else if (tool != null && mode == "expired") {
+                items = items.Where(s => s.ToolName == tool && s.ItemStatus == 1 && s.LicenseExpiration < DateTime.Now);
+            } else if (tool != null && mode == "missing") {
+                items = items.Where(s => s.ToolName == tool && s.LicenseExpiration == null);
             } else if (tool != null) {
                 items = items.Where(s => s.ToolName == tool);
             } else if (tooltype != null) {
@@ -42,6 +46,7 @@ namespace InventoryDBRazor.Pages
                 .Include(s => s.ListStatus)
                 .OrderBy(i => i.ListTools.ToolName).ThenBy(i => i.ItemName)
                 .ToListAsync();
+
         }
     }
 }

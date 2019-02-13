@@ -27,6 +27,7 @@ namespace InventoryDBRazor.Models
         public virtual DbSet<vwToolCount> vwToolCount { get; set; }
         public virtual DbSet<vwNoLicCount> vwNoLicCount { get; set; }
         public virtual DbSet<vwExpiredLicense> vwExpiredLicense { get; set; }
+        public virtual DbSet<vwSearch> vwSearch { get; set; }
         //        public virtual DbSet<IntMainContact> IntMainContact { get; set; }
         //        public virtual DbSet<ListVendor> ListVendor { get; set; }
         //        public virtual DbSet<ListVendorPOC> ListVendorPOC { get; set; }
@@ -43,5 +44,6 @@ namespace InventoryDBRazor.Models
         {
 
         }
+
     }
 }

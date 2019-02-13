@@ -243,16 +243,16 @@
                 @Html.DisplayFor(modelItem => item.SupportCost)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.ListLocation.LocationID)
+                @Html.DisplayFor(modelItem => item.ListLocation.LocationName)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.ListTools.ToolId)
+                @Html.DisplayFor(modelItem => item.ListTools.ToolName)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.ListToolType.TypeId)
+                @Html.DisplayFor(modelItem => item.ListToolType.ToolType)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.ListStatus.StatusID)
+                @Html.DisplayFor(modelItem => item.ListStatus.Status)
             </td>
             <td>
                 <a asp-page="./Edit" asp-route-id="@item.ItemId">Edit</a> |
